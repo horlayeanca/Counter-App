@@ -19,23 +19,23 @@ function Counter() {
 
   return (
     <div className="bg-neutral-200 w-full h-screen flex items-center">
-      <div className="flex flex-col p-4 max-w-lg h-96 mx-auto rounded-xl w-full justify-center items-center bg-slate-400">
+      <div className="flex flex-col p-4 max-w-lg h-96 mx-auto rounded-xl w-full justify-center items-center bg-sky-500 shadow-xl">
         <h1 className="text-3xl pb-3">Count: {count}</h1>
         <div className="flex flex-row flex-wrap flex-initial p-4 justify-around">
           <button
-            className="bg-green-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
+            className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
             onClick={() => dispatch("increment")}
           >
             increment
           </button>
           <button
-            className="bg-green-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
+            className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
             onClick={() => dispatch("decrement")}
           >
             decrement
           </button>
           <button
-            className="bg-green-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
+            className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
             onClick={() => dispatch("reset")}
           >
             reset
@@ -47,7 +47,7 @@ function Counter() {
               onChange={(e) => dispatch("setValue")}
             />
             <button
-              className="bg-green-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
+              className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
               onClick={(e) => dispatch()}
             >
               setValue

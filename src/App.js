@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Counter />} />
           <Route path="/counter2" element={<Counter2 />} />
-          <Route path="/error" element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>

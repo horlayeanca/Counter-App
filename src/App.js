@@ -8,7 +8,10 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<Counter />} />
+          <Route path="/" element={<Counter />}>
+            <Route path="/" element={<useReducer />} />
+            <Route path="/counter2" element={<customHook />} />
+          </Route>
           <Route path="/counter2" element={<Counter2 />} />
           <Route path="*" element={<Error />} />
         </Routes>

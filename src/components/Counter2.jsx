@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 function Counter2() {
   const [counter, setCounter] = useState(0);
@@ -24,11 +25,26 @@ function Counter2() {
 
   const setValue = (event) => {
     event.preventDefault();
-    setCounter(this.state.value);
+    setCounter(event.target.value + 1);
   };
   return (
-    <div className="bg-neutral-200 w-full h-screen flex items-center">
-      <div className="flex flex-col p-4 max-w-lg h-96 mx-auto rounded-xl w-full justify-center items-center bg-sky-500 shadow-xl">
+    <div className="bg-neutral-200 h-screen">
+      <div className="flex gap-5 justify-center items-center h-20 mx-auto py-5">
+        <Link
+          to="/counter"
+          className="bg-teal-600 px-12 py-4 rounded-xl text-white font-bold hover:bg-teal-800 hover:scale-105 duration-300"
+        >
+          useReducer
+        </Link>
+        <Link
+          to="/counter2"
+          className="bg-teal-600 px-12 py-4 rounded-xl text-white font-bold hover:bg-teal-800 hover:scale-105 duration-300"
+        >
+          customHook
+        </Link>
+        <Outlet />
+      </div>
+      <div className="flex flex-col p-4 max-w-lg h-96 mx-auto rounded-xl w-full justify-center items-center bg-gradient-to-bl from-rose-700 via-violet-800 to-purple-800 shadow-xl">
         <h1 className="text-3xl pb-3">Count: {counter}</h1>
         <div className="flex flex-row flex-wrap flex-initial p-4 justify-around">
           <button

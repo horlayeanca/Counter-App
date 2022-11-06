@@ -1,13 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Counter from "./components/Counter";
-import NavBar from "./components/NavBar";
+import Counter2 from "./components/Counter2";
 
 function App() {
   return (
     <BrowserRouter>
       <div>
-        <NavBar />
-        <Counter />
+        <Routes>
+          <Route path="/" element={<Counter />} />
+          <Route path="/counter2" element={<Counter2 />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

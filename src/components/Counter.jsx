@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, Outlet } from "react-router-dom";
 
 function countReducer(initialState = 0, action) {
@@ -20,6 +21,10 @@ function Counter() {
 
   return (
     <div className="bg-neutral-200">
+      <Helmet
+        title={`Counter is ${count}`}
+        description="This is a simple counter app with useReducer."
+      />
       <div className="flex gap-5 justify-center items-center h-20 mx-auto pt-5">
         <Link
           to="/"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, Outlet } from "react-router-dom";
 
 function Counter2() {
@@ -25,10 +26,14 @@ function Counter2() {
 
   const setValue = (event) => {
     event.preventDefault();
-    setCounter(event.target.value + 1);
+    setCounter(event.target.value);
   };
   return (
     <div className="bg-neutral-200 h-screen">
+      <Helmet
+        title={`Counter is ${counter}`}
+        description="This is a simple counter app."
+      />
       <div className="flex gap-5 justify-center items-center h-20 mx-auto py-5">
         <Link
           to="/counter"

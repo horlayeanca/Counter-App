@@ -49,13 +49,13 @@ function Counter() {
               className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
               onClick={() => dispatch("increment")}
             >
-              increment
+              Increment
             </button>
             <button
               className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
               onClick={() => dispatch("decrement")}
             >
-              decrement
+              Decrement
             </button>
             <button
               className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"

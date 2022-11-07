@@ -24,6 +24,10 @@ function Counter2() {
     setCounter(0);
   };
 
+  const handleChange = (event) => {
+    event.preventDefault();
+    setCounter(event.target.value);
+  };
   const setValue = (event) => {
     event.preventDefault();
     setCounter(event.target.value);
@@ -71,7 +75,11 @@ function Counter2() {
             reset
           </button>
           <div className="mt-8">
-            <input className="p-3 rounded-lg mx-3" type="number" />
+            <input
+              onChange={handleChange}
+              className="p-3 rounded-lg mx-3"
+              type="number"
+            />
             <button
               onClick={setValue}
               className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"

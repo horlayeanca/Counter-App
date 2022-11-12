@@ -24,13 +24,16 @@ function Counter2() {
     setCounter(0);
   };
 
+  const [newCount, setNewCount] = useState("");
+
   const handleChange = (event) => {
     event.preventDefault();
-    setCounter(event.target.value);
+    setNewCount(event.target.value);
   };
   const setValue = (event) => {
     event.preventDefault();
-    setCounter(event.target.value);
+    setCounter([newCount]);
+    setNewCount("");
   };
   return (
     <div className="bg-neutral-200 h-screen">
@@ -77,6 +80,7 @@ function Counter2() {
           <div className="mt-8">
             <input
               onChange={handleChange}
+              value={newCount}
               className="p-3 rounded-lg mx-3"
               type="number"
             />

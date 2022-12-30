@@ -7,7 +7,7 @@ function Counter2() {
 
   const handleIncrement = (event) => {
     event.preventDefault();
-    setCounter((prev) => prev + 1);
+    setCounter((counter) => counter + 1);
   };
 
   const handleDecrement = (event) => {
@@ -24,15 +24,15 @@ function Counter2() {
     setCounter(0);
   };
 
-  const [newCount, setNewCount] = useState("");
+  const [newCount, setNewCount] = useState(0);
 
   const handleChange = (event) => {
     event.preventDefault();
-    setNewCount(event.target.value);
+    setNewCount(Number(event.target.value));
   };
   const setValue = (event) => {
     event.preventDefault();
-    setCounter([newCount]);
+    setCounter(newCount);
     setNewCount("");
   };
   return (

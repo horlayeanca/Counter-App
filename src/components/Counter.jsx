@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, Outlet } from "react-router-dom";
 
@@ -9,8 +9,6 @@ function countReducer(initialState = 0, action) {
     return initialState - 1;
   } else if (action === "reset") {
     return 0;
-  } else if (action === "setValue") {
-    return;
   } else {
     return initialState;
   }
@@ -18,6 +16,18 @@ function countReducer(initialState = 0, action) {
 
 function Counter() {
   const [count, dispatch] = useReducer(countReducer, 0);
+
+  const [newCount, setNewCount] = useState("");
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setNewCount(event.target.value);
+  };
+  const setValue = (event) => {
+    event.preventDefault();
+    count([newCount]);
+    setNewCount("");
+  };
 
   return (
     <div className="bg-neutral-200">
@@ -67,11 +77,12 @@ function Counter() {
               <input
                 className="p-3 rounded-lg mx-3"
                 type="number"
-                onChange={(e) => dispatch("setValue")}
+                value={newCount}
+                onChange={handleChange}
               />
               <button
                 className="bg-gradient-to-tr from-lime-500 to-rose-300 p-3 rounded-lg shadow-md hover:bg-slate-600 duration-300 hover:scale-105"
-                onClick={(e) => dispatch()}
+                onClick={setValue}
               >
                 setValue
               </button>
